@@ -1,7 +1,16 @@
-import PropTypes from 'prop-types';
 import styles from './SearchFilter.module.css';
+import { useDispatch } from 'react-redux';
+import { filterContacts } from 'redux/filterSlice';
 
-export const SearchFilter = ({ findByName }) => {
+export const SearchFilter = () => {
+  const dispatch = useDispatch();
+
+  const findByName = evt => {
+    evt.preventDefault();
+    const input = evt.target.value.toLowerCase();
+    dispatch(filterContacts(input));
+  };
+
   const {
     searchFilter,   
     searchFilter__input } =
@@ -20,6 +29,3 @@ export const SearchFilter = ({ findByName }) => {
   );
 };
 
-SearchFilter.propTypes = {
-  findByName: PropTypes.func.isRequired,
-};

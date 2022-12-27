@@ -13,22 +13,12 @@ export const ContactForm = () => {
     saveToLocalStorage(contacts);
   }, [contacts]);
 
-  // const handleChange = evt => {
-  //   const { name, value } = evt.target;
-  //   if (name === 'name') {
-  //     setName(value);
-  //   }
-  //   if (name === 'number') {
-  //     setNumber(value);
-  //   }
-  // };
-
   const handleSubmit = evt => {
     evt.preventDefault();
     const form = evt.target;
     const name = form.name.value;
     const number = form.number.value;
-    
+
     if (contacts.find(cont => cont.name === name)) {
       alert(`${name} is already in contacts`);
     } else {

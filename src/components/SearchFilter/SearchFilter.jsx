@@ -11,10 +11,7 @@ export const SearchFilter = () => {
     dispatch(filterContacts(input));
   };
 
-  const {
-    searchFilter,   
-    searchFilter__input } =
-    styles;
+  const { searchFilter, searchFilter__input } = styles;
   return (
     <div className={searchFilter}>
       <label>
@@ -28,4 +25,3 @@ export const SearchFilter = () => {
     </div>
   );
 };
-
